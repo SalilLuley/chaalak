@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:stacked/stacked.dart';
-
 import 'splash_viewmodel.dart';
 
 class SplashView extends StatelessWidget {
@@ -10,9 +9,12 @@ class SplashView extends StatelessWidget {
   Widget build(BuildContext context) {
     return ViewModelBuilder<SplashViewModel>.reactive(
       builder: (context, model, child) => Scaffold(
-          body: Center(
-        child: Text(model.title),
-      )),
+        body: Center(
+          child: Text(model.title),
+        ),
+        floatingActionButton:
+            FloatingActionButton(onPressed: () => model.navigateToDetail()),
+      ),
       viewModelBuilder: () => SplashViewModel(),
     );
   }

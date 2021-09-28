@@ -1,12 +1,16 @@
-import 'package:chaalak/ui/views/home/home_view.dart';
+import 'package:chaalak/app/router.locator.dart';
+import 'package:chaalak/app/router.router.dart';
 import 'package:flutter/material.dart';
+import 'package:stacked/stacked_annotations.dart';
+import 'package:stacked_services/stacked_services.dart';
 
 void main() {
+  // WidgetsFlutterBinding.ensureInitialized();
+  setupLocator(environment: Environment.dev);
   runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -14,7 +18,8 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: HomeView(),
+      navigatorKey: StackedService.navigatorKey,
+      onGenerateRoute: StackedRouter().onGenerateRoute,
     );
   }
 }
