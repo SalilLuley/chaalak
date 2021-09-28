@@ -33,15 +33,21 @@ class StackedRouter extends RouterBase {
   Map<Type, StackedRouteFactory> get pagesMap => _pagesMap;
   final _pagesMap = <Type, StackedRouteFactory>{
     SplashView: (data) {
-      return MaterialPageRoute<MaterialRoute<dynamic>>(
-        builder: (context) => const SplashView(),
+      return PageRouteBuilder<CustomRoute<dynamic>>(
+        pageBuilder: (context, animation, secondaryAnimation) =>
+            const SplashView(),
         settings: data,
+        transitionsBuilder: TransitionsBuilders.fadeIn,
+        transitionDuration: const Duration(milliseconds: 400),
       );
     },
     HomeView: (data) {
-      return MaterialPageRoute<MaterialRoute<dynamic>>(
-        builder: (context) => const HomeView(),
+      return PageRouteBuilder<CustomRoute<dynamic>>(
+        pageBuilder: (context, animation, secondaryAnimation) =>
+            const HomeView(),
         settings: data,
+        transitionsBuilder: TransitionsBuilders.fadeIn,
+        transitionDuration: const Duration(milliseconds: 400),
       );
     },
   };
