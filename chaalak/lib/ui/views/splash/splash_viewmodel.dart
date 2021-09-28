@@ -5,7 +5,7 @@ import 'package:stacked_services/stacked_services.dart';
 
 class SplashViewModel extends BaseViewModel {
   final _navigationService = locator<NavigationService>();
-  String _title = "Splash1";
+  String _title = "Splash";
 
   String get title => _title;
 

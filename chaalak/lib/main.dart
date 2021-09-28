@@ -15,7 +15,7 @@ void main() {
 //Api call logger
 void _setupLogging() {
   Logger.level = Level.debug;
-  // Logger.onRecord.listen((rec) {
+  // Logger.listen((rec) {
   //   print('${rec.level.name}: ${rec.time}: ${rec.message}');
   // });
 }
@@ -24,7 +24,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      title: 'Chaalak',
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:lottie/lottie.dart';
 import 'package:stacked/stacked.dart';
 import 'splash_viewmodel.dart';
 
@@ -10,7 +11,7 @@ class SplashView extends StatelessWidget {
     return ViewModelBuilder<SplashViewModel>.reactive(
       builder: (context, model, child) => Scaffold(
         body: Center(
-          child: Text(model.title),
+          child: Lottie.asset("assets/lottie/delivery.json"),
         ),
         floatingActionButton:
             FloatingActionButton(onPressed: () => model.navigateToDetail()),
