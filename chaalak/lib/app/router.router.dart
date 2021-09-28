@@ -42,12 +42,9 @@ class StackedRouter extends RouterBase {
       );
     },
     HomeView: (data) {
-      return PageRouteBuilder<CustomRoute<dynamic>>(
-        pageBuilder: (context, animation, secondaryAnimation) =>
-            const HomeView(),
+      return MaterialPageRoute<MaterialRoute<dynamic>>(
+        builder: (context) => const HomeView(),
         settings: data,
-        transitionsBuilder: TransitionsBuilders.fadeIn,
-        transitionDuration: const Duration(milliseconds: 400),
       );
     },
   };

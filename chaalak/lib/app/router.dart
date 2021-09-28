@@ -10,10 +10,9 @@ import 'package:stacked_services/stacked_services.dart';
       transitionsBuilder: TransitionsBuilders.fadeIn,
       initial: true,
       durationInMilliseconds: 400),
-  CustomRoute(
-      page: HomeView,
-      transitionsBuilder: TransitionsBuilders.fadeIn,
-      durationInMilliseconds: 400),
+  MaterialRoute(
+    page: HomeView,
+  ),
 ], dependencies: [
   LazySingleton(classType: NavigationService)
 ])
