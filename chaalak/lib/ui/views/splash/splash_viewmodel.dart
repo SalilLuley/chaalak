@@ -1,5 +1,5 @@
-import 'package:chaalak/app/router.locator.dart';
-import 'package:chaalak/app/router.router.dart';
+import 'package:chaalak/app/router/router.locator.dart';
+import 'package:chaalak/app/router/router.router.dart';
 import 'package:stacked/stacked.dart';
 import 'package:stacked_services/stacked_services.dart';
 
