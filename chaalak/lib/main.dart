@@ -1,13 +1,23 @@
 import 'package:chaalak/app/router/router.locator.dart';
 import 'package:chaalak/app/router/router.router.dart';
 import 'package:flutter/material.dart';
+import 'package:logger/logger.dart';
 import 'package:stacked/stacked_annotations.dart';
 import 'package:stacked_services/stacked_services.dart';
 
 void main() {
   // WidgetsFlutterBinding.ensureInitialized();
   setupLocator(environment: Environment.dev);
+  _setupLogging();
   runApp(MyApp());
+}
+
+//Api call logger
+void _setupLogging() {
+  Logger.level = Level.debug;
+  // Logger.onRecord.listen((rec) {
+  //   print('${rec.level.name}: ${rec.time}: ${rec.message}');
+  // });
 }
 
 class MyApp extends StatelessWidget {

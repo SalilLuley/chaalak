@@ -31,6 +31,7 @@ dependencies:
   #State management
   stacked: ^2.2.5
   stacked_services: ^0.8.13
+  logger: ^1.1.0
 
 dev_dependencies:
   flutter_test:
