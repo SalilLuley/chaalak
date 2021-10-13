@@ -8,6 +8,9 @@ class HomeViewModel extends BaseViewModel {
   final navigationService = locator<NavigationService>();
   late GoogleMapController myController;
 
+  int _lengthOfAddons = 5;
+  int get lengthOfAddons => _lengthOfAddons;
+
   bool _bookingButtons = false;
   bool get bookingButtons => _bookingButtons;
 
