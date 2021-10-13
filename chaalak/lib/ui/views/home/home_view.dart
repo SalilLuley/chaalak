@@ -772,124 +772,180 @@ class HomeView extends StatelessWidget {
                         child: SingleChildScrollView(
                           scrollDirection: Axis.horizontal,
                           child: Row(
-                            mainAxisSize: MainAxisSize.max,
-                            mainAxisAlignment: MainAxisAlignment.start,
-                            crossAxisAlignment: CrossAxisAlignment.center,
-                            children: List.generate(
-                                model.lengthOfAddons,
-                                (index) => Align(
-                                      alignment: AlignmentDirectional(0, 0),
-                                      child: Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
-                                            10, 10, 10, 10),
-                                        child: Column(
-                                          mainAxisSize: MainAxisSize.min,
-                                          mainAxisAlignment:
-                                              MainAxisAlignment.center,
-                                          crossAxisAlignment:
-                                              CrossAxisAlignment.center,
-                                          children: [
-                                            Material(
-                                              color: Colors.transparent,
-                                              elevation: 5,
-                                              child: Container(
-                                                width: MediaQuery.of(context)
-                                                        .size
-                                                        .width *
-                                                    0.2,
-                                                height: MediaQuery.of(context)
-                                                        .size
-                                                        .height *
-                                                    0.1,
-                                                decoration: BoxDecoration(
-                                                  color: Colors.white,
-                                                ),
-                                                child: Container(
-                                                  width: 120,
-                                                  height: 120,
-                                                  clipBehavior: Clip.antiAlias,
-                                                  decoration: BoxDecoration(
-                                                    shape: BoxShape.circle,
-                                                  ),
-                                                  child: Image.asset(
-                                                    'assets/images/icons8-water-100.png',
-                                                    fit: BoxFit.scaleDown,
-                                                  ),
-                                                ),
-                                              ),
+                              mainAxisSize: MainAxisSize.max,
+                              mainAxisAlignment: MainAxisAlignment.start,
+                              crossAxisAlignment: CrossAxisAlignment.center,
+                              children: [
+                                Align(
+                                  alignment: AlignmentDirectional(0, 0),
+                                  child: Column(
+                                    mainAxisSize: MainAxisSize.min,
+                                    mainAxisAlignment: MainAxisAlignment.center,
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.center,
+                                    children: [
+                                      Material(
+                                        color: Colors.transparent,
+                                        elevation: 5,
+                                        child: Container(
+                                          width: MediaQuery.of(context)
+                                                  .size
+                                                  .width *
+                                              0.2,
+                                          height: MediaQuery.of(context)
+                                                  .size
+                                                  .height *
+                                              0.1,
+                                          decoration: BoxDecoration(
+                                            color: Colors.white,
+                                          ),
+                                          child: Container(
+                                            clipBehavior: Clip.antiAlias,
+                                            decoration: BoxDecoration(
+                                              shape: BoxShape.circle,
                                             ),
-                                            Padding(
-                                              padding: EdgeInsetsDirectional
-                                                  .fromSTEB(10, 10, 10, 10),
-                                              child: Text('Water',
-                                                  style: TextStyle(
-                                                    fontFamily: 'Poppins',
-                                                    color: Colors.black,
-                                                  )),
-                                            )
-                                          ],
+                                            child: Image.asset(
+                                              'assets/images/add.png',
+                                              fit: BoxFit.scaleDown,
+                                            ),
+                                          ),
                                         ),
                                       ),
-                                    )),
-                            // children: [
-                            //   ListView.builder(itemBuilder: (context, index) {
-
-                            //   },)
-                            // Align(
-                            //   alignment: AlignmentDirectional(0, 0),
-                            //   child: Padding(
-                            //     padding: EdgeInsetsDirectional.fromSTEB(
-                            //         10, 10, 10, 10),
-                            //     child: Column(
-                            //       mainAxisSize: MainAxisSize.min,
-                            //       mainAxisAlignment: MainAxisAlignment.center,
-                            //       crossAxisAlignment:
-                            //           CrossAxisAlignment.center,
-                            //       children: [
-                            //         Material(
-                            //           color: Colors.transparent,
-                            //           elevation: 5,
-                            //           child: Container(
-                            //             width: MediaQuery.of(context)
-                            //                     .size
-                            //                     .width *
-                            //                 0.2,
-                            //             height: MediaQuery.of(context)
-                            //                     .size
-                            //                     .height *
-                            //                 0.1,
-                            //             decoration: BoxDecoration(
-                            //               color: Colors.white,
-                            //             ),
-                            //             child: Container(
-                            //               width: 120,
-                            //               height: 120,
-                            //               clipBehavior: Clip.antiAlias,
-                            //               decoration: BoxDecoration(
-                            //                 shape: BoxShape.circle,
-                            //               ),
-                            //               child: Image.asset(
-                            //                 'assets/images/icons8-water-100.png',
-                            //                 fit: BoxFit.contain,
-                            //               ),
-                            //             ),
-                            //           ),
-                            //         ),
-                            //         Padding(
-                            //           padding: EdgeInsetsDirectional.fromSTEB(
-                            //               10, 10, 10, 10),
-                            //           child: Text('Water',
-                            //               style: TextStyle(
-                            //                 fontFamily: 'Poppins',
-                            //                 color: Colors.black,
-                            //               )),
-                            //         )
-                            //       ],
-                            //     ),
-                            //   ),
-                            // ),
-                            // ],
-                          ),
+                                      Padding(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                            10, 10, 10, 10),
+                                        child: Text('Add Car',
+                                            style: TextStyle(
+                                              fontFamily: 'Poppins',
+                                              color: Colors.black,
+                                            )),
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                                Padding(
+                                  padding: const EdgeInsets.only(
+                                      left: 15, right: 10),
+                                  child: Align(
+                                    alignment: AlignmentDirectional(0, 0),
+                                    child: Column(
+                                      mainAxisSize: MainAxisSize.min,
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.center,
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.center,
+                                      children: [
+                                        Material(
+                                          color: Colors.transparent,
+                                          elevation: 5,
+                                          child: Container(
+                                            width: MediaQuery.of(context)
+                                                    .size
+                                                    .width *
+                                                0.2,
+                                            height: MediaQuery.of(context)
+                                                    .size
+                                                    .height *
+                                                0.1,
+                                            decoration: BoxDecoration(
+                                              color: Colors.white,
+                                            ),
+                                            child: Container(
+                                              clipBehavior: Clip.antiAlias,
+                                              decoration: BoxDecoration(
+                                                shape: BoxShape.circle,
+                                              ),
+                                              child: Image.asset(
+                                                'assets/images/icons8-person-96.png',
+                                                fit: BoxFit.scaleDown,
+                                              ),
+                                            ),
+                                          ),
+                                        ),
+                                        Padding(
+                                          padding:
+                                              EdgeInsetsDirectional.fromSTEB(
+                                                  10, 10, 10, 10),
+                                          child: Text('In Person',
+                                              style: TextStyle(
+                                                fontFamily: 'Poppins',
+                                                color: Colors.black,
+                                              )),
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                ),
+                                Row(
+                                  mainAxisSize: MainAxisSize.max,
+                                  mainAxisAlignment: MainAxisAlignment.start,
+                                  crossAxisAlignment: CrossAxisAlignment.center,
+                                  children: List.generate(
+                                      model.lengthOfAddons,
+                                      (index) => Align(
+                                            alignment:
+                                                AlignmentDirectional(0, 0),
+                                            child: Padding(
+                                              padding: EdgeInsetsDirectional
+                                                  .fromSTEB(10, 10, 10, 10),
+                                              child: Column(
+                                                mainAxisSize: MainAxisSize.min,
+                                                mainAxisAlignment:
+                                                    MainAxisAlignment.center,
+                                                crossAxisAlignment:
+                                                    CrossAxisAlignment.center,
+                                                children: [
+                                                  Material(
+                                                    color: Colors.transparent,
+                                                    elevation: 5,
+                                                    child: Container(
+                                                      width:
+                                                          MediaQuery.of(context)
+                                                                  .size
+                                                                  .width *
+                                                              0.2,
+                                                      height:
+                                                          MediaQuery.of(context)
+                                                                  .size
+                                                                  .height *
+                                                              0.1,
+                                                      decoration: BoxDecoration(
+                                                        color: Colors.white,
+                                                      ),
+                                                      child: Container(
+                                                        width: 120,
+                                                        height: 120,
+                                                        clipBehavior:
+                                                            Clip.antiAlias,
+                                                        decoration:
+                                                            BoxDecoration(
+                                                          shape:
+                                                              BoxShape.circle,
+                                                        ),
+                                                        child: Image.asset(
+                                                          'assets/images/icons8-water-100.png',
+                                                          fit: BoxFit.scaleDown,
+                                                        ),
+                                                      ),
+                                                    ),
+                                                  ),
+                                                  Padding(
+                                                    padding:
+                                                        EdgeInsetsDirectional
+                                                            .fromSTEB(
+                                                                10, 10, 10, 10),
+                                                    child: Text('Water',
+                                                        style: TextStyle(
+                                                          fontFamily: 'Poppins',
+                                                          color: Colors.black,
+                                                        )),
+                                                  )
+                                                ],
+                                              ),
+                                            ),
+                                          )),
+                                )
+                              ]),
                         ),
                       ),
                     ),
