@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
+import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:stacked/stacked.dart';
 import 'home_viewmodel.dart';
 // ignore: import_of_legacy_library_into_null_safe
@@ -233,6 +234,16 @@ class HomeView extends StatelessWidget {
               child: Stack(
                 alignment: AlignmentDirectional(0, 0),
                 children: [
+                  Align(
+                    alignment: AlignmentDirectional(0, 0),
+                    child: GoogleMap(
+                      mapType: MapType.normal,
+                      initialCameraPosition: model.initialCamera(),
+                      onMapCreated: (GoogleMapController controller) {
+                        model.myController = controller;
+                      },
+                    ),
+                  ),
                   Column(
                     mainAxisSize: MainAxisSize.max,
                     mainAxisAlignment: MainAxisAlignment.end,
