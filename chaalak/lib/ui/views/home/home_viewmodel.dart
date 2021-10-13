@@ -11,6 +11,12 @@ class HomeViewModel extends BaseViewModel {
   bool _bookingButtons = false;
   bool get bookingButtons => _bookingButtons;
 
+  bool _services = false;
+  bool get services => _services;
+
+  bool _cars = false;
+  bool get cars => _cars;
+
   String get title => _title;
 
   static final CameraPosition _kGooglePlex = CameraPosition(
@@ -30,11 +36,32 @@ class HomeViewModel extends BaseViewModel {
 
   showBookingTabs() {
     _bookingButtons = true;
+    _cars = true;
     notifyListeners();
   }
 
   hideBookingTabs() {
     _bookingButtons = false;
+    notifyListeners();
+  }
+
+  showServices() {
+    _services = true;
+    notifyListeners();
+  }
+
+  hideServices() {
+    _services = false;
+    notifyListeners();
+  }
+
+  showCars() {
+    _cars = true;
+    notifyListeners();
+  }
+
+  hideCars() {
+    _cars = false;
     notifyListeners();
   }
 
