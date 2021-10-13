@@ -30,9 +30,9 @@ class HomeView extends StatelessWidget {
                 {_scaffoldKey.currentState!.openDrawer()}, // <-- Opens drawer,
           ),
           title: Text(
-            'chaalak',
+            'Chaalak',
             style: TextStyle(
-              fontFamily: 'Open Sans',
+              fontFamily: 'Poppins',
               color: Colors.white,
               fontWeight: FontWeight.bold,
             ),
@@ -44,9 +44,7 @@ class HomeView extends StatelessWidget {
                 color: Colors.white,
                 size: 30,
               ),
-              onPressed: () {
-                print('Notifications IconButton pressed ...');
-              },
+              onPressed: () => model.navigateToNotifications(),
             )
           ],
           centerTitle: true,
@@ -253,30 +251,7 @@ class HomeView extends StatelessWidget {
                       selectAddons(model, context),
                     ],
                   ),
-                  Align(
-                    alignment: AlignmentDirectional(1, -1),
-                    child: Padding(
-                      padding: EdgeInsetsDirectional.fromSTEB(7, 7, 7, 7),
-                      child: Container(
-                        width: MediaQuery.of(context).size.width * 0.12,
-                        height: MediaQuery.of(context).size.width * 0.12,
-                        decoration: BoxDecoration(
-                          color: Colors.black,
-                          shape: BoxShape.circle,
-                        ),
-                        child: IconButton(
-                          icon: Icon(
-                            Icons.my_location,
-                            color: Colors.white,
-                            size: 20,
-                          ),
-                          onPressed: () {
-                            model.hideBookingTabs();
-                          },
-                        ),
-                      ),
-                    ),
-                  ),
+                  myCurrentLocation(context, model),
                   Align(
                     alignment: AlignmentDirectional(0, 1),
                     child: Padding(
@@ -304,6 +279,36 @@ class HomeView extends StatelessWidget {
         ),
       ),
       viewModelBuilder: () => HomeViewModel(),
+    );
+  }
+
+  Visibility myCurrentLocation(BuildContext context, HomeViewModel model) {
+    return Visibility(
+      visible: true,
+      child: Align(
+        alignment: AlignmentDirectional(1, -1),
+        child: Padding(
+          padding: EdgeInsetsDirectional.fromSTEB(7, 7, 7, 7),
+          child: Container(
+            width: MediaQuery.of(context).size.width * 0.12,
+            height: MediaQuery.of(context).size.width * 0.12,
+            decoration: BoxDecoration(
+              color: Colors.transparent,
+              shape: BoxShape.circle,
+            ),
+            child: IconButton(
+              icon: Icon(
+                FontAwesomeIcons.locationArrow,
+                color: Colors.black,
+                size: 30,
+              ),
+              onPressed: () {
+                model.hideBookingTabs();
+              },
+            ),
+          ),
+        ),
+      ),
     );
   }
 

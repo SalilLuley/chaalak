@@ -70,4 +70,6 @@ class HomeViewModel extends BaseViewModel {
   initialCamera() {
     return _kGooglePlex;
   }
+
+  navigateToNotifications() {}
 }
