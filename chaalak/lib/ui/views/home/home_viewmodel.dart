@@ -35,8 +35,8 @@ class HomeViewModel extends BaseViewModel {
   }
 
   showBookingTabs() {
-    _bookingButtons = true;
-    _cars = true;
+    if (!_bookingButtons) _bookingButtons = true;
+    if (!_services) _cars = true;
     notifyListeners();
   }
 
