@@ -42,6 +42,8 @@ class HomeViewModel extends BaseViewModel {
 
   hideBookingTabs() {
     _bookingButtons = false;
+    _cars = false;
+    _services = false;
     notifyListeners();
   }
 

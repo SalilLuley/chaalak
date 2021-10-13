@@ -248,117 +248,7 @@ class HomeView extends StatelessWidget {
                     mainAxisSize: MainAxisSize.max,
                     mainAxisAlignment: MainAxisAlignment.end,
                     children: [
-                      Visibility(
-                        visible: model.bookingButtons,
-                        child: Align(
-                          alignment: AlignmentDirectional(0, 0),
-                          child: Padding(
-                            padding:
-                                EdgeInsetsDirectional.fromSTEB(10, 10, 10, 10),
-                            child: Material(
-                              color: Colors.transparent,
-                              elevation: 10,
-                              shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(15),
-                              ),
-                              child: Container(
-                                width: MediaQuery.of(context).size.width * 0.8,
-                                height:
-                                    MediaQuery.of(context).size.height * 0.1,
-                                decoration: BoxDecoration(
-                                  color: Colors.black,
-                                  borderRadius: BorderRadius.circular(15),
-                                  shape: BoxShape.rectangle,
-                                ),
-                                alignment: AlignmentDirectional(0, 0),
-                                child: Row(
-                                  mainAxisSize: MainAxisSize.max,
-                                  mainAxisAlignment:
-                                      MainAxisAlignment.spaceEvenly,
-                                  crossAxisAlignment: CrossAxisAlignment.center,
-                                  children: [
-                                    Container(
-                                      width: MediaQuery.of(context).size.width *
-                                          0.3,
-                                      height:
-                                          MediaQuery.of(context).size.height *
-                                              1,
-                                      decoration: BoxDecoration(
-                                        color: Colors.black,
-                                      ),
-                                      child: Column(
-                                        mainAxisSize: MainAxisSize.max,
-                                        mainAxisAlignment:
-                                            MainAxisAlignment.center,
-                                        children: [
-                                          IconButton(
-                                            icon: FaIcon(
-                                              FontAwesomeIcons.car,
-                                              color: Colors.white,
-                                              size: 30,
-                                            ),
-                                            onPressed: () {
-                                              model.showCars();
-                                              model.hideServices();
-                                            },
-                                          ),
-                                          Text('Garage',
-                                              style: TextStyle(
-                                                fontFamily: 'Poppins',
-                                                color: Colors.white,
-                                              )),
-                                        ],
-                                      ),
-                                    ),
-                                    Container(
-                                      width: 1,
-                                      height:
-                                          MediaQuery.of(context).size.height *
-                                              1,
-                                      decoration: BoxDecoration(
-                                        color: Color(0xFFEEEEEE),
-                                      ),
-                                    ),
-                                    Container(
-                                      width: MediaQuery.of(context).size.width *
-                                          0.3,
-                                      height:
-                                          MediaQuery.of(context).size.height *
-                                              1,
-                                      decoration: BoxDecoration(
-                                        color: Colors.black,
-                                      ),
-                                      child: Column(
-                                        mainAxisSize: MainAxisSize.max,
-                                        mainAxisAlignment:
-                                            MainAxisAlignment.center,
-                                        children: [
-                                          IconButton(
-                                            icon: Icon(
-                                              Icons.miscellaneous_services,
-                                              color: Colors.white,
-                                              size: 30,
-                                            ),
-                                            onPressed: () {
-                                              model.hideCars();
-                                              model.showServices();
-                                            },
-                                          ),
-                                          Text('Services',
-                                              style: TextStyle(
-                                                fontFamily: 'Poppins',
-                                                color: Colors.white,
-                                              )),
-                                        ],
-                                      ),
-                                    )
-                                  ],
-                                ),
-                              ),
-                            ),
-                          ),
-                        ),
-                      ),
+                      garageAndServicesButtons(model, context),
                       selectCar(model, context),
                       selectAddons(model, context),
                     ],
@@ -414,6 +304,108 @@ class HomeView extends StatelessWidget {
         ),
       ),
       viewModelBuilder: () => HomeViewModel(),
+    );
+  }
+
+  Visibility garageAndServicesButtons(
+      HomeViewModel model, BuildContext context) {
+    return Visibility(
+      visible: model.bookingButtons,
+      child: Align(
+        alignment: AlignmentDirectional(0, 0),
+        child: Padding(
+          padding: EdgeInsetsDirectional.fromSTEB(10, 10, 10, 10),
+          child: Material(
+            color: Colors.transparent,
+            elevation: 10,
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(15),
+            ),
+            child: Container(
+              width: MediaQuery.of(context).size.width * 0.8,
+              height: MediaQuery.of(context).size.height * 0.1,
+              decoration: BoxDecoration(
+                color: Colors.black,
+                borderRadius: BorderRadius.circular(15),
+                shape: BoxShape.rectangle,
+              ),
+              alignment: AlignmentDirectional(0, 0),
+              child: Row(
+                mainAxisSize: MainAxisSize.max,
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  Container(
+                    width: MediaQuery.of(context).size.width * 0.3,
+                    height: MediaQuery.of(context).size.height * 1,
+                    decoration: BoxDecoration(
+                      color: Colors.black,
+                    ),
+                    child: Column(
+                      mainAxisSize: MainAxisSize.max,
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        IconButton(
+                          icon: FaIcon(
+                            FontAwesomeIcons.car,
+                            color: Colors.white,
+                            size: 30,
+                          ),
+                          onPressed: () {
+                            model.showCars();
+                            model.hideServices();
+                          },
+                        ),
+                        Text('Garage',
+                            style: TextStyle(
+                              fontFamily: 'Poppins',
+                              color: Colors.white,
+                            )),
+                      ],
+                    ),
+                  ),
+                  Container(
+                    width: 1,
+                    height: MediaQuery.of(context).size.height * 1,
+                    decoration: BoxDecoration(
+                      color: Color(0xFFEEEEEE),
+                    ),
+                  ),
+                  Container(
+                    width: MediaQuery.of(context).size.width * 0.3,
+                    height: MediaQuery.of(context).size.height * 1,
+                    decoration: BoxDecoration(
+                      color: Colors.black,
+                    ),
+                    child: Column(
+                      mainAxisSize: MainAxisSize.max,
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        IconButton(
+                          icon: Icon(
+                            Icons.miscellaneous_services,
+                            color: Colors.white,
+                            size: 30,
+                          ),
+                          onPressed: () {
+                            model.hideCars();
+                            model.showServices();
+                          },
+                        ),
+                        Text('Services',
+                            style: TextStyle(
+                              fontFamily: 'Poppins',
+                              color: Colors.white,
+                            )),
+                      ],
+                    ),
+                  )
+                ],
+              ),
+            ),
+          ),
+        ),
+      ),
     );
   }
 
