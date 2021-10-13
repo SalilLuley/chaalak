@@ -86,12 +86,12 @@ class HomeView extends StatelessWidget {
                       mainAxisAlignment: MainAxisAlignment.center,
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        Text(
-                          'Ratan Tata',
-                          style: TextStyle(
-                            fontFamily: 'Poppins',
-                          ),
-                        ),
+                        Text('Ratan Tata',
+                            style: TextStyle(
+                                fontSize: 20,
+                                fontFamily: 'Poppins',
+                                fontWeight: FontWeight.w500),
+                            overflow: TextOverflow.clip),
                         Padding(
                           padding: EdgeInsetsDirectional.fromSTEB(0, 10, 0, 0),
                           child: Container(
