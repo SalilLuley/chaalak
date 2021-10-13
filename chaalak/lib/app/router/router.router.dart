@@ -42,10 +42,23 @@ class StackedRouter extends RouterBase {
       );
     },
     HomeView: (data) {
+      var args = data.getArgs<HomeViewArguments>(
+        orElse: () => HomeViewArguments(),
+      );
       return MaterialPageRoute<MaterialRoute<dynamic>>(
-        builder: (context) => const HomeView(),
+        builder: (context) => HomeView(key: args.key),
         settings: data,
       );
     },
   };
+}
+
+/// ************************************************************************
+/// Arguments holder classes
+/// *************************************************************************
+
+/// HomeView arguments holder class
+class HomeViewArguments {
+  final Key? key;
+  HomeViewArguments({this.key});
 }

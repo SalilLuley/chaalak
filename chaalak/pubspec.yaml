@@ -40,6 +40,19 @@ dev_dependencies:
     sdk: flutter
   build_runner: ^2.1.2
   stacked_generator:
+  auto_size_text:
+  cached_network_image: ^3.1.0
+  flutter_spinkit: ^4.1.2+1
+  flutter_svg: ^0.22.0
+  font_awesome_flutter:
+  geolocator: 7.6.2
+  google_fonts: ^2.1.0
+  google_maps_flutter: ^2.0.6
+  google_maps_flutter_web: ^0.3.0+3
+  intl:
+  page_transition:
+  timeago:
+  url_launcher:
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
