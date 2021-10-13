@@ -9,11 +9,6 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 class HomeView extends StatelessWidget {
   HomeView({Key? key}) : super(key: key);
   final _scaffoldKey = GlobalKey<ScaffoldState>();
-//  bool false = false;
-//   bool false = false;
-//   bool false = false;
-//   bool false = false;
-//   bool false = false;
 
   @override
   Widget build(BuildContext context) {
@@ -243,7 +238,7 @@ class HomeView extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.end,
                     children: [
                       Visibility(
-                        visible: true,
+                        visible: model.bookingButtons,
                         child: Align(
                           alignment: AlignmentDirectional(0, 0),
                           child: Padding(
@@ -354,7 +349,7 @@ class HomeView extends StatelessWidget {
                         ),
                       ),
                       Visibility(
-                        visible: true,
+                        visible: model.bookingButtons,
                         child: Align(
                           alignment: AlignmentDirectional(0, 1),
                           child: Material(
@@ -779,9 +774,29 @@ class HomeView extends StatelessWidget {
                             size: 20,
                           ),
                           onPressed: () {
-                            print('Location IconButton pressed ...');
+                            model.hideBookingTabs();
                           },
                         ),
+                      ),
+                    ),
+                  ),
+                  Align(
+                    alignment: AlignmentDirectional(0, 1),
+                    child: Padding(
+                      padding: EdgeInsetsDirectional.fromSTEB(7, 7, 7, 7),
+                      child: ElevatedButton(
+                        style: ButtonStyle(
+                          backgroundColor:
+                              MaterialStateProperty.all<Color>(Colors.black),
+                        ),
+                        child: Text('Lets Search',
+                            style: TextStyle(
+                              fontFamily: 'Poppins',
+                              color: Colors.white,
+                            )),
+                        onPressed: () {
+                          model.showBookingTabs();
+                        },
                       ),
                     ),
                   )
