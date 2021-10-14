@@ -1,7 +1,7 @@
 import 'package:chaalak/app/router/router.locator.dart';
 import 'package:chaalak/app/router/router.router.dart';
 import 'package:chaalak/ui/views/bookingHistory/booking_history.dart';
-import 'package:chaalak/ui/views/booking_history_detail/detail.dart';
+import 'package:chaalak/ui/views/booking_history_detail/detail_view.dart';
 import 'package:chaalak/ui/views/home/home_view.dart';
 import 'package:flutter/material.dart';
 import 'package:logger/logger.dart';
@@ -31,9 +31,9 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      // navigatorKey: StackedService.navigatorKey,
-      // onGenerateRoute: StackedRouter().onGenerateRoute,
-      home: BookingHistoryView(),
+      navigatorKey: StackedService.navigatorKey,
+      onGenerateRoute: StackedRouter().onGenerateRoute,
+      // home: BookingHistoryView(),
       // home: HomeView(),
       // home: BookingHistoryDetailView()
     );

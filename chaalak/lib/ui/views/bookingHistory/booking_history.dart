@@ -48,7 +48,7 @@ class BookingHistoryView extends StatelessWidget {
                 Expanded(
                   child: TabBarView(
                     children: [
-                      letsParcoBookings(context),
+                      letsParcoBookings(context, model),
                       traditionalStationBookings(context),
                       bookAValetBookings(context),
                     ],
@@ -303,7 +303,8 @@ class BookingHistoryView extends StatelessWidget {
     );
   }
 
-  SingleChildScrollView letsParcoBookings(BuildContext context) {
+  SingleChildScrollView letsParcoBookings(
+      BuildContext context, BookingHistoryViewModel model) {
     return SingleChildScrollView(
       child: Column(
           mainAxisSize: MainAxisSize.max,
@@ -311,112 +312,115 @@ class BookingHistoryView extends StatelessWidget {
             5,
             (index) => Padding(
               padding: EdgeInsetsDirectional.fromSTEB(10, 10, 10, 10),
-              child: Container(
-                width: MediaQuery.of(context).size.width,
-                height: MediaQuery.of(context).size.height * 0.15,
-                decoration: BoxDecoration(
-                  color: Color(0xFFEEEEEE),
-                  borderRadius: BorderRadius.circular(15),
-                ),
-                child: Row(
-                  mainAxisSize: MainAxisSize.max,
-                  children: [
-                    Container(
-                      width: 10,
-                      height: MediaQuery.of(context).size.height * 1,
-                      decoration: BoxDecoration(
-                        color: Color(0xFF25D08E),
-                        borderRadius: BorderRadius.only(
-                          bottomLeft: Radius.circular(15),
-                          bottomRight: Radius.circular(0),
-                          topLeft: Radius.circular(15),
-                          topRight: Radius.circular(0),
+              child: GestureDetector(
+                onTap: () => model.openDetail(),
+                child: Container(
+                  width: MediaQuery.of(context).size.width,
+                  height: MediaQuery.of(context).size.height * 0.15,
+                  decoration: BoxDecoration(
+                    color: Color(0xFFEEEEEE),
+                    borderRadius: BorderRadius.circular(15),
+                  ),
+                  child: Row(
+                    mainAxisSize: MainAxisSize.max,
+                    children: [
+                      Container(
+                        width: 10,
+                        height: MediaQuery.of(context).size.height * 1,
+                        decoration: BoxDecoration(
+                          color: Color(0xFF25D08E),
+                          borderRadius: BorderRadius.only(
+                            bottomLeft: Radius.circular(15),
+                            bottomRight: Radius.circular(0),
+                            topLeft: Radius.circular(15),
+                            topRight: Radius.circular(0),
+                          ),
                         ),
                       ),
-                    ),
-                    Padding(
-                      padding: EdgeInsetsDirectional.fromSTEB(10, 10, 10, 10),
-                      child: Column(
-                        mainAxisSize: MainAxisSize.max,
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          Padding(
-                            padding:
-                                EdgeInsetsDirectional.fromSTEB(10, 10, 10, 10),
-                            child: Text(
-                              '25\$',
+                      Padding(
+                        padding: EdgeInsetsDirectional.fromSTEB(10, 10, 10, 10),
+                        child: Column(
+                          mainAxisSize: MainAxisSize.max,
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Padding(
+                              padding: EdgeInsetsDirectional.fromSTEB(
+                                  10, 10, 10, 10),
+                              child: Text(
+                                '25\$',
+                                style: TextStyle(
+                                  fontFamily: 'Poppins',
+                                  color: Colors.black,
+                                ),
+                              ),
+                            ),
+                            Text(
+                              'TODAY',
                               style: TextStyle(
                                 fontFamily: 'Poppins',
                                 color: Colors.black,
                               ),
                             ),
-                          ),
-                          Text(
-                            'TODAY',
-                            style: TextStyle(
-                              fontFamily: 'Poppins',
-                              color: Colors.black,
-                            ),
-                          ),
-                          Text(
-                            '06:30PM',
-                            style: TextStyle(
-                              fontFamily: 'Poppins',
-                              color: Colors.black,
-                            ),
-                          )
-                        ],
-                      ),
-                    ),
-                    Padding(
-                      padding: EdgeInsetsDirectional.fromSTEB(10, 10, 10, 10),
-                      child: Container(
-                        width: 1,
-                        height: MediaQuery.of(context).size.height * 0.15,
-                        decoration: BoxDecoration(
-                          color: Color(0xFFBEBEBE),
+                            Text(
+                              '06:30PM',
+                              style: TextStyle(
+                                fontFamily: 'Poppins',
+                                color: Colors.black,
+                              ),
+                            )
+                          ],
                         ),
                       ),
-                    ),
-                    Container(
-                      height: double.infinity,
-                      decoration: BoxDecoration(
-                        color: Color(0xFFEEEEEE),
-                      ),
-                      child: Column(
-                        mainAxisSize: MainAxisSize.min,
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        crossAxisAlignment: CrossAxisAlignment.center,
-                        children: [
-                          Text(
-                            'Orange City, Khamla',
-                            style: TextStyle(
-                              fontFamily: 'Poppins',
-                              color: Colors.black,
-                            ),
+                      Padding(
+                        padding: EdgeInsetsDirectional.fromSTEB(10, 10, 10, 10),
+                        child: Container(
+                          width: 1,
+                          height: MediaQuery.of(context).size.height * 0.15,
+                          decoration: BoxDecoration(
+                            color: Color(0xFFBEBEBE),
                           ),
-                          Padding(
-                            padding:
-                                EdgeInsetsDirectional.fromSTEB(10, 10, 10, 10),
-                            child: Container(
-                              width: MediaQuery.of(context).size.width * 0.5,
-                              height: 2,
-                              decoration: BoxDecoration(
-                                color: Color(0xFFBEBEBE),
+                        ),
+                      ),
+                      Container(
+                        height: double.infinity,
+                        decoration: BoxDecoration(
+                          color: Color(0xFFEEEEEE),
+                        ),
+                        child: Column(
+                          mainAxisSize: MainAxisSize.min,
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          children: [
+                            Text(
+                              'Orange City, Khamla',
+                              style: TextStyle(
+                                fontFamily: 'Poppins',
+                                color: Colors.black,
                               ),
                             ),
-                          ),
-                          Text(
-                            'Police Station Rd, Bhankhera',
-                            style: TextStyle(
-                              fontFamily: 'Poppins',
-                              color: Colors.black,
+                            Padding(
+                              padding: EdgeInsetsDirectional.fromSTEB(
+                                  10, 10, 10, 10),
+                              child: Container(
+                                width: MediaQuery.of(context).size.width * 0.5,
+                                height: 2,
+                                decoration: BoxDecoration(
+                                  color: Color(0xFFBEBEBE),
+                                ),
+                              ),
                             ),
-                          )
-                        ],
-                      ),
-                    )
-                  ],
+                            Text(
+                              'Police Station Rd, Bhankhera',
+                              style: TextStyle(
+                                fontFamily: 'Poppins',
+                                color: Colors.black,
+                              ),
+                            )
+                          ],
+                        ),
+                      )
+                    ],
+                  ),
                 ),
               ),
             ),

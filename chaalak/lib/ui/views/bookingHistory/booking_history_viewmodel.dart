@@ -22,4 +22,8 @@ class BookingHistoryViewModel extends BaseViewModel {
   Future indicateAnimationComplete() async {
     await _replaceWith();
   }
+
+  openDetail() {
+    _navigationService.navigateTo(Routes.bookingHistoryDetailView);
+  }
 }
