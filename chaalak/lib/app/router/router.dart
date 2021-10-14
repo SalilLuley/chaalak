@@ -1,3 +1,4 @@
+import 'package:chaalak/ui/views/bookingHistory/booking_history.dart';
 import 'package:chaalak/ui/views/home/home_view.dart';
 import 'package:chaalak/ui/views/splash/splash_view.dart';
 import 'package:stacked/stacked.dart';
@@ -12,6 +13,9 @@ import 'package:stacked_services/stacked_services.dart';
       durationInMilliseconds: 400),
   MaterialRoute(
     page: HomeView,
+  ),
+  MaterialRoute(
+    page: BookingHistoryView,
   ),
 ], dependencies: [
   LazySingleton(classType: NavigationService)

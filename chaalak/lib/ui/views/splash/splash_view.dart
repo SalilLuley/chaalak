@@ -31,8 +31,6 @@ class SplashView extends HookWidget {
             },
           ),
         ),
-        floatingActionButton:
-            FloatingActionButton(onPressed: () => model.navigateToDetail()),
       ),
       viewModelBuilder: () => SplashViewModel(),
     );
