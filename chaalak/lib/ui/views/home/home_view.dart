@@ -471,15 +471,12 @@ class HomeView extends StatelessWidget {
                         child: SingleChildScrollView(
                           scrollDirection: Axis.horizontal,
                           child: Row(
-                            mainAxisSize: MainAxisSize.max,
-                            mainAxisAlignment: MainAxisAlignment.start,
-                            crossAxisAlignment: CrossAxisAlignment.center,
-                            children: [
-                              Align(
-                                alignment: AlignmentDirectional(0, 0),
-                                child: Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
-                                      10, 10, 10, 10),
+                              mainAxisSize: MainAxisSize.max,
+                              mainAxisAlignment: MainAxisAlignment.start,
+                              crossAxisAlignment: CrossAxisAlignment.center,
+                              children: [
+                                Align(
+                                  alignment: AlignmentDirectional(0, 0),
                                   child: Column(
                                     mainAxisSize: MainAxisSize.min,
                                     mainAxisAlignment: MainAxisAlignment.center,
@@ -502,15 +499,13 @@ class HomeView extends StatelessWidget {
                                             color: Colors.white,
                                           ),
                                           child: Container(
-                                            width: 120,
-                                            height: 120,
                                             clipBehavior: Clip.antiAlias,
                                             decoration: BoxDecoration(
                                               shape: BoxShape.circle,
                                             ),
                                             child: Image.asset(
-                                              'assets/images/icons8-person-90.png',
-                                              fit: BoxFit.contain,
+                                              'assets/images/add.png',
+                                              fit: BoxFit.scaleDown,
                                             ),
                                           ),
                                         ),
@@ -518,177 +513,138 @@ class HomeView extends StatelessWidget {
                                       Padding(
                                         padding: EdgeInsetsDirectional.fromSTEB(
                                             10, 10, 10, 10),
-                                        child: Text('In Person',
+                                        child: Text('Add Car',
                                             style: TextStyle(
                                               fontFamily: 'Poppins',
                                               color: Colors.black,
                                             )),
-                                      )
+                                      ),
                                     ],
                                   ),
                                 ),
-                              ),
-                              Align(
-                                alignment: AlignmentDirectional(0, 0),
-                                child: Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
-                                      10, 10, 10, 10),
-                                  child: Column(
-                                    mainAxisSize: MainAxisSize.min,
-                                    mainAxisAlignment: MainAxisAlignment.center,
-                                    crossAxisAlignment:
-                                        CrossAxisAlignment.center,
-                                    children: [
-                                      Material(
-                                        color: Colors.transparent,
-                                        elevation: 5,
-                                        child: Container(
-                                          width: MediaQuery.of(context)
-                                                  .size
-                                                  .width *
-                                              0.2,
-                                          height: MediaQuery.of(context)
-                                                  .size
-                                                  .height *
-                                              0.1,
-                                          decoration: BoxDecoration(
-                                            color: Colors.white,
-                                          ),
+                                Padding(
+                                  padding: const EdgeInsets.only(
+                                      left: 15, right: 10),
+                                  child: Align(
+                                    alignment: AlignmentDirectional(0, 0),
+                                    child: Column(
+                                      mainAxisSize: MainAxisSize.min,
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.center,
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.center,
+                                      children: [
+                                        Material(
+                                          color: Colors.transparent,
+                                          elevation: 5,
                                           child: Container(
-                                            width: 120,
-                                            height: 120,
-                                            clipBehavior: Clip.antiAlias,
+                                            width: MediaQuery.of(context)
+                                                    .size
+                                                    .width *
+                                                0.2,
+                                            height: MediaQuery.of(context)
+                                                    .size
+                                                    .height *
+                                                0.1,
                                             decoration: BoxDecoration(
-                                              shape: BoxShape.circle,
+                                              color: Colors.white,
                                             ),
-                                            child: SvgPicture.asset(
-                                              'assets/images/bmw-logo.svg',
-                                              fit: BoxFit.contain,
+                                            child: Container(
+                                              clipBehavior: Clip.antiAlias,
+                                              decoration: BoxDecoration(
+                                                shape: BoxShape.circle,
+                                              ),
+                                              child: Image.asset(
+                                                'assets/images/icons8-person-96.png',
+                                                fit: BoxFit.scaleDown,
+                                              ),
                                             ),
                                           ),
                                         ),
-                                      ),
-                                      Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
-                                            10, 10, 10, 10),
-                                        child: Text('BMW',
-                                            style: TextStyle(
-                                              fontFamily: 'Poppins',
-                                              color: Colors.black,
-                                            )),
-                                      )
-                                    ],
-                                  ),
-                                ),
-                              ),
-                              Align(
-                                alignment: AlignmentDirectional(0, 0),
-                                child: Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
-                                      10, 10, 10, 10),
-                                  child: Column(
-                                    mainAxisSize: MainAxisSize.min,
-                                    mainAxisAlignment: MainAxisAlignment.center,
-                                    crossAxisAlignment:
-                                        CrossAxisAlignment.center,
-                                    children: [
-                                      Material(
-                                        color: Colors.transparent,
-                                        elevation: 5,
-                                        child: Container(
-                                          width: MediaQuery.of(context)
-                                                  .size
-                                                  .width *
-                                              0.2,
-                                          height: MediaQuery.of(context)
-                                                  .size
-                                                  .height *
-                                              0.1,
-                                          decoration: BoxDecoration(
-                                            color: Colors.white,
-                                          ),
-                                          child: Container(
-                                            width: 120,
-                                            height: 120,
-                                            clipBehavior: Clip.antiAlias,
-                                            decoration: BoxDecoration(
-                                              shape: BoxShape.circle,
-                                            ),
-                                            child: Image.asset(
-                                              'assets/images/lam.png',
-                                              fit: BoxFit.contain,
-                                            ),
-                                          ),
+                                        Padding(
+                                          padding:
+                                              EdgeInsetsDirectional.fromSTEB(
+                                                  10, 10, 10, 10),
+                                          child: Text('In Person',
+                                              style: TextStyle(
+                                                fontFamily: 'Poppins',
+                                                color: Colors.black,
+                                              )),
                                         ),
-                                      ),
-                                      Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
-                                            10, 10, 10, 10),
-                                        child: Text('Lamborghini',
-                                            style: TextStyle(
-                                              fontFamily: 'Poppins',
-                                              color: Colors.black,
-                                            )),
-                                      )
-                                    ],
+                                      ],
+                                    ),
                                   ),
                                 ),
-                              ),
-                              Align(
-                                alignment: AlignmentDirectional(0, 0),
-                                child: Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
-                                      10, 10, 10, 10),
-                                  child: Column(
-                                    mainAxisSize: MainAxisSize.min,
-                                    mainAxisAlignment: MainAxisAlignment.center,
-                                    crossAxisAlignment:
-                                        CrossAxisAlignment.center,
-                                    children: [
-                                      Material(
-                                        color: Colors.transparent,
-                                        elevation: 5,
-                                        child: Container(
-                                          width: MediaQuery.of(context)
-                                                  .size
-                                                  .width *
-                                              0.2,
-                                          height: MediaQuery.of(context)
-                                                  .size
-                                                  .height *
-                                              0.1,
-                                          decoration: BoxDecoration(
-                                            color: Colors.white,
-                                          ),
-                                          child: Container(
-                                            width: 120,
-                                            height: 120,
-                                            clipBehavior: Clip.antiAlias,
-                                            decoration: BoxDecoration(
-                                              shape: BoxShape.circle,
+                                Row(
+                                  mainAxisSize: MainAxisSize.max,
+                                  mainAxisAlignment: MainAxisAlignment.start,
+                                  crossAxisAlignment: CrossAxisAlignment.center,
+                                  children: List.generate(
+                                      model.lengthOfAddons,
+                                      (index) => Align(
+                                            alignment:
+                                                AlignmentDirectional(0, 0),
+                                            child: Padding(
+                                              padding: EdgeInsetsDirectional
+                                                  .fromSTEB(10, 10, 10, 10),
+                                              child: Column(
+                                                mainAxisSize: MainAxisSize.min,
+                                                mainAxisAlignment:
+                                                    MainAxisAlignment.center,
+                                                crossAxisAlignment:
+                                                    CrossAxisAlignment.center,
+                                                children: [
+                                                  Material(
+                                                    color: Colors.transparent,
+                                                    elevation: 5,
+                                                    child: Container(
+                                                      width:
+                                                          MediaQuery.of(context)
+                                                                  .size
+                                                                  .width *
+                                                              0.2,
+                                                      height:
+                                                          MediaQuery.of(context)
+                                                                  .size
+                                                                  .height *
+                                                              0.1,
+                                                      decoration: BoxDecoration(
+                                                        color: Colors.white,
+                                                      ),
+                                                      child: Container(
+                                                        width: 120,
+                                                        height: 120,
+                                                        clipBehavior:
+                                                            Clip.antiAlias,
+                                                        decoration:
+                                                            BoxDecoration(
+                                                          shape:
+                                                              BoxShape.circle,
+                                                        ),
+                                                        child: Image.asset(
+                                                          'assets/images/BMW_logo.png',
+                                                          fit: BoxFit.scaleDown,
+                                                        ),
+                                                      ),
+                                                    ),
+                                                  ),
+                                                  Padding(
+                                                    padding:
+                                                        EdgeInsetsDirectional
+                                                            .fromSTEB(
+                                                                10, 10, 10, 10),
+                                                    child: Text('BMW',
+                                                        style: TextStyle(
+                                                          fontFamily: 'Poppins',
+                                                          color: Colors.black,
+                                                        )),
+                                                  )
+                                                ],
+                                              ),
                                             ),
-                                            child: Image.asset(
-                                              'assets/images/Ferrari.png',
-                                              fit: BoxFit.contain,
-                                            ),
-                                          ),
-                                        ),
-                                      ),
-                                      Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
-                                            10, 10, 10, 10),
-                                        child: Text('Ferrari',
-                                            style: TextStyle(
-                                              fontFamily: 'Poppins',
-                                              color: Colors.black,
-                                            )),
-                                      )
-                                    ],
-                                  ),
-                                ),
-                              )
-                            ],
-                          ),
+                                          )),
+                                )
+                              ]),
                         ),
                       ),
                     ),
@@ -959,14 +915,18 @@ class HomeView extends StatelessWidget {
                     decoration: BoxDecoration(
                       color: Colors.white,
                     ),
-                    child: TextButton(
+                    child: ElevatedButton(
                       onPressed: () {
                         print('Button pressed ...');
                       },
+                      style: ButtonStyle(
+                        backgroundColor:
+                            MaterialStateProperty.all<Color>(Colors.black),
+                      ),
                       child: Text('Lets Search',
                           style: TextStyle(
                             fontFamily: 'Poppins',
-                            color: Colors.black,
+                            color: Colors.white,
                           )),
                     ),
                   )
