@@ -7,6 +7,9 @@ class HomeViewModel extends BaseViewModel {
   String _title = "Model";
   final navigationService = locator<NavigationService>();
   late GoogleMapController myController;
+  final Set<Marker> markers = new Set(); //markers for google map
+  static const LatLng showLocation =
+      const LatLng(27.7089427, 85.3086209); //location to show in map
 
   int _lengthOfAddons = 5;
   int get lengthOfAddons => _lengthOfAddons;
@@ -23,18 +26,54 @@ class HomeViewModel extends BaseViewModel {
   String get title => _title;
 
   static final CameraPosition _kGooglePlex = CameraPosition(
-    target: LatLng(37.42796133580664, -122.085749655962),
+    target: LatLng(21.1458, 79.0882),
     zoom: 14.4746,
   );
 
-  static final CameraPosition _kLake = CameraPosition(
-      bearing: 192.8334901395799,
-      target: LatLng(37.43296265331129, -122.08832357078792),
-      tilt: 59.440717697143555,
-      zoom: 19.151926040649414);
-
   void openDrawer() {
     // _navigationService.openDrawer();
+  }
+
+  getMarkers() {
+    markers.add(Marker(
+      //add first marker
+      markerId: MarkerId(showLocation.toString()),
+      position: showLocation, //position of marker
+      infoWindow: InfoWindow(
+        //popup info
+        title: 'Marker Title First ',
+        snippet: 'My Custom Subtitle',
+      ),
+      icon: BitmapDescriptor.defaultMarker, //Icon for Marker
+    ));
+
+    markers.add(Marker(
+      //add second marker
+      markerId: MarkerId(showLocation.toString()),
+      position: LatLng(21.1341, 79.0816), //position of marker
+      infoWindow: InfoWindow(
+        //popup info
+        title: 'Marker Title Second ',
+        snippet: 'My Custom Subtitle',
+      ),
+      icon: BitmapDescriptor.defaultMarker, //Icon for Marker
+    ));
+
+    markers.add(Marker(
+      //add third marker
+      markerId: MarkerId(showLocation.toString()),
+      position: LatLng(21.1327, 79.0960), //position of marker
+      infoWindow: InfoWindow(
+        //popup info
+        title: 'Marker Title Third ',
+        snippet: 'My Custom Subtitle',
+      ),
+      icon: BitmapDescriptor.defaultMarker, //Icon for Marker
+    ));
+
+    //add more markers here
+
+    return markers;
   }
 
   showBookingTabs() {
