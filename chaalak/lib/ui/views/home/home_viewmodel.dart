@@ -75,4 +75,8 @@ class HomeViewModel extends BaseViewModel {
   }
 
   navigateToNotifications() {}
+
+  mapTap() {
+    hideBookingTabs();
+  }
 }

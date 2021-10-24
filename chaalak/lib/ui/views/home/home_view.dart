@@ -65,6 +65,7 @@ class HomeView extends StatelessWidget {
                   Align(
                     alignment: AlignmentDirectional(0, 0),
                     child: GoogleMap(
+                      onTap: (lat) => {model.mapTap()},
                       mapType: MapType.normal,
                       initialCameraPosition: model.initialCamera(),
                       onMapCreated: (GoogleMapController controller) {
@@ -132,9 +133,7 @@ class HomeView extends StatelessWidget {
                 color: Colors.black,
                 size: 30,
               ),
-              onPressed: () {
-                model.hideBookingTabs();
-              },
+              onPressed: () {},
             ),
           ),
         ),
