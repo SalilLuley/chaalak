@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:stacked/stacked.dart';
 import 'detail_viewmodel.dart';
@@ -46,7 +47,7 @@ class BookingHistoryDetailView extends HookWidget {
                           children: [
                             Padding(
                               padding:
-                                  EdgeInsetsDirectional.fromSTEB(0, 0, 0, 50),
+                                  EdgeInsetsDirectional.fromSTEB(0, 0, 0, 0),
                               child: PageView(
                                 controller: PageController(initialPage: 0),
                                 scrollDirection: Axis.horizontal,
@@ -99,9 +100,10 @@ class BookingHistoryDetailView extends HookWidget {
                                     Text(
                                       '08 Jan 2018, 12 PM',
                                       style: TextStyle(
-                                        fontFamily: 'Poppins',
-                                        color: Colors.grey,
-                                      ),
+                                          fontFamily: 'Poppins',
+                                          color: Colors.grey,
+                                          fontWeight: FontWeight.bold,
+                                          fontSize: 16),
                                     )
                                   ],
                                 ),
@@ -336,34 +338,37 @@ class BookingHistoryDetailView extends HookWidget {
                                   )
                                 ],
                               ),
-                              Row(
-                                mainAxisSize: MainAxisSize.max,
-                                mainAxisAlignment:
-                                    MainAxisAlignment.spaceBetween,
-                                children: [
-                                  Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
-                                        15, 0, 0, 0),
-                                    child: Text(
-                                      'Vehicle Number',
-                                      style: TextStyle(
-                                        fontFamily: 'Poppins',
-                                        color: Colors.black,
+                              Padding(
+                                padding: const EdgeInsets.only(bottom: 20),
+                                child: Row(
+                                  mainAxisSize: MainAxisSize.max,
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceBetween,
+                                  children: [
+                                    Padding(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                          15, 0, 0, 0),
+                                      child: Text(
+                                        'Vehicle Number',
+                                        style: TextStyle(
+                                          fontFamily: 'Poppins',
+                                          color: Colors.black,
+                                        ),
                                       ),
                                     ),
-                                  ),
-                                  Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
-                                        15, 0, 15, 0),
-                                    child: Text(
-                                      'MA12QC1992',
-                                      style: TextStyle(
-                                        fontFamily: 'Poppins',
-                                        color: Colors.black,
+                                    Padding(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                          15, 0, 15, 0),
+                                      child: Text(
+                                        'MA12QC1992',
+                                        style: TextStyle(
+                                          fontFamily: 'Poppins',
+                                          color: Colors.black,
+                                        ),
                                       ),
-                                    ),
-                                  )
-                                ],
+                                    )
+                                  ],
+                                ),
                               )
                             ],
                           ),
@@ -396,13 +401,15 @@ class BookingHistoryDetailView extends HookWidget {
                       child: Column(
                         mainAxisSize: MainAxisSize.max,
                         crossAxisAlignment: CrossAxisAlignment.start,
+                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                         children: [
                           Text(
                             'Bill Detail',
                             style: TextStyle(
-                              fontFamily: 'Poppins',
-                              color: Colors.black,
-                            ),
+                                fontFamily: 'Poppins',
+                                color: Colors.black,
+                                fontWeight: FontWeight.bold,
+                                fontSize: 20),
                           ),
                           Row(
                             mainAxisSize: MainAxisSize.max,
