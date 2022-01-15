@@ -1,10 +1,12 @@
 import 'package:chaalak/app/router/router.locator.dart';
 import 'package:chaalak/app/router/router.router.dart';
+import 'package:chaalak/reactive_services/social_media_sign_in.dart';
 import 'package:stacked/stacked.dart';
 import 'package:stacked_services/stacked_services.dart';
 
 class LoginViewModel extends BaseViewModel {
   final _navigationService = locator<NavigationService>();
+  final _socialMediaLogin = locator<SocialMediaSignIn>();
 
   String _title = "Login View";
 
@@ -23,7 +25,8 @@ class LoginViewModel extends BaseViewModel {
   }
 
   navigateToDetail() {
-    _navigationService.navigateTo(Routes.homeView);
+    _socialMediaLogin.signInWithGoogle();
+    // _navigationService.navigateTo(Routes.homeView);
   }
 
   Future _replaceWith() async {
