@@ -16,7 +16,7 @@ class SplashViewModel extends BaseViewModel {
 
   Future _replaceWith() async {
     Future.delayed(Duration(seconds: 0)).then((value) async =>
-        {await _navigationService.replaceWith(Routes.homeView)});
+        {await _navigationService.replaceWith(Routes.loginView)});
   }
 
   Future indicateAnimationComplete() async {

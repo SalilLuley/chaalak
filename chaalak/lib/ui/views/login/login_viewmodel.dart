@@ -3,12 +3,24 @@ import 'package:chaalak/app/router/router.router.dart';
 import 'package:stacked/stacked.dart';
 import 'package:stacked_services/stacked_services.dart';
 
-class CustomDrawerViewModel extends BaseViewModel {
+class LoginViewModel extends BaseViewModel {
   final _navigationService = locator<NavigationService>();
 
-  String _title = "Splash";
+  String _title = "Login View";
 
   String get title => _title;
+
+  bool _passwordVisibility = false;
+
+  bool get passwordVisibility => _passwordVisibility;
+
+  setPasswordVisibility() {
+    if (_passwordVisibility)
+      _passwordVisibility = false;
+    else
+      _passwordVisibility = true;
+    notifyListeners();
+  }
 
   navigateToDetail() {
     _navigationService.navigateTo(Routes.homeView);
@@ -23,11 +35,5 @@ class CustomDrawerViewModel extends BaseViewModel {
     await _replaceWith();
   }
 
-  openBookingHistory() {
-    _navigationService.navigateTo(Routes.bookingHistoryView);
-  }
-
-  logout() {
-    _navigationService.pushNamedAndRemoveUntil(Routes.loginView);
-  }
+  void login() {}
 }

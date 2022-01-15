@@ -13,6 +13,7 @@ import 'package:stacked/stacked_annotations.dart';
 import '../../ui/views/bookingHistory/booking_history.dart';
 import '../../ui/views/booking_history_detail/detail_view.dart';
 import '../../ui/views/home/home_view.dart';
+import '../../ui/views/login/login_view.dart';
 import '../../ui/views/splash/splash_view.dart';
 
 class Routes {
@@ -20,11 +21,13 @@ class Routes {
   static const String homeView = '/home-view';
   static const String bookingHistoryView = '/booking-history-view';
   static const String bookingHistoryDetailView = '/booking-history-detail-view';
+  static const String loginView = '/login-view';
   static const all = <String>{
     splashView,
     homeView,
     bookingHistoryView,
     bookingHistoryDetailView,
+    loginView,
   };
 }
 
@@ -36,6 +39,7 @@ class StackedRouter extends RouterBase {
     RouteDef(Routes.homeView, page: HomeView),
     RouteDef(Routes.bookingHistoryView, page: BookingHistoryView),
     RouteDef(Routes.bookingHistoryDetailView, page: BookingHistoryDetailView),
+    RouteDef(Routes.loginView, page: LoginView),
   ];
   @override
   Map<Type, StackedRouteFactory> get pagesMap => _pagesMap;
@@ -67,6 +71,12 @@ class StackedRouter extends RouterBase {
     BookingHistoryDetailView: (data) {
       return MaterialPageRoute<MaterialRoute<dynamic>>(
         builder: (context) => const BookingHistoryDetailView(),
+        settings: data,
+      );
+    },
+    LoginView: (data) {
+      return MaterialPageRoute<MaterialRoute<dynamic>>(
+        builder: (context) => const LoginView(),
         settings: data,
       );
     },

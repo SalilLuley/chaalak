@@ -170,7 +170,7 @@ class CustomDrawerView extends HookWidget {
               Padding(
                 padding: EdgeInsetsDirectional.fromSTEB(10, 10, 10, 40),
                 child: TextButton(
-                  onPressed: () => {},
+                  onPressed: () => model.logout(),
                   style: ButtonStyle(
                     foregroundColor:
                         MaterialStateProperty.all<Color>(Colors.blue),

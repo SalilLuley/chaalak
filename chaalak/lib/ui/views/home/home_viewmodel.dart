@@ -48,28 +48,29 @@ class HomeViewModel extends BaseViewModel {
     ));
 
     markers.add(Marker(
-      //add second marker
-      markerId: MarkerId(showLocation.toString()),
-      position: LatLng(21.1341, 79.0816), //position of marker
-      infoWindow: InfoWindow(
-        //popup info
-        title: 'Marker Title Second ',
-        snippet: 'My Custom Subtitle',
-      ),
-      icon: BitmapDescriptor.defaultMarker, //Icon for Marker
-    ));
+        //add second marker
+        markerId: MarkerId(showLocation.toString()),
+        position: LatLng(21.1341, 79.0816), //position of marker
+        infoWindow: InfoWindow(
+          //popup info
+          title: 'Marker Title Second ',
+          snippet: 'My Custom Subtitle',
+        ),
+        icon: BitmapDescriptor.defaultMarker, //Icon for Marker
+        onTap: () => {this.markerTap()}));
 
     markers.add(Marker(
-      //add third marker
-      markerId: MarkerId(showLocation.toString()),
-      position: LatLng(21.1327, 79.0960), //position of marker
-      infoWindow: InfoWindow(
-        //popup info
-        title: 'Marker Title Third ',
-        snippet: 'My Custom Subtitle',
-      ),
-      icon: BitmapDescriptor.defaultMarker, //Icon for Marker
-    ));
+        //add third marker
+        markerId: MarkerId(showLocation.toString()),
+        position: LatLng(21.1327, 79.0960), //position of marker
+        infoWindow: InfoWindow(
+          //popup info
+          title: 'Marker Title Third ',
+          snippet: 'My Custom Subtitle',
+        ),
+        icon: BitmapDescriptor.defaultMarker,
+        onTap: () => {this.markerTap()} //Icon for Marker
+        ));
 
     //add more markers here
 
@@ -117,5 +118,9 @@ class HomeViewModel extends BaseViewModel {
 
   mapTap() {
     hideBookingTabs();
+  }
+
+  markerTap() {
+    showBookingTabs();
   }
 }
