@@ -3,6 +3,7 @@ import 'package:chaalak/app/router/router.router.dart';
 import 'package:chaalak/ui/views/bookingHistory/booking_history.dart';
 import 'package:chaalak/ui/views/booking_history_detail/detail_view.dart';
 import 'package:chaalak/ui/views/home/home_view.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:logger/logger.dart';
 import 'package:stacked/stacked_annotations.dart';
@@ -10,6 +11,7 @@ import 'package:stacked_services/stacked_services.dart';
 
 void main() {
   // WidgetsFlutterBinding.ensureInitialized();
+  Firebase.initializeApp();
   setupLocator(environment: Environment.dev);
   _setupLogging();
   runApp(MyApp());
