@@ -24,8 +24,9 @@ class LoginViewModel extends BaseViewModel {
     notifyListeners();
   }
 
-  navigateToDetail() {
-    _socialMediaLogin.signInWithGoogle();
+  navigateToDetail() async {
+    var signIn = await _socialMediaLogin.signInWithGoogle();
+    print(signIn);
     // _navigationService.navigateTo(Routes.homeView);
   }
 
