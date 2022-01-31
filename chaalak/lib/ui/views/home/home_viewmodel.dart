@@ -1,7 +1,10 @@
+import 'dart:convert';
+
 import 'package:chaalak/app/router/router.locator.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:stacked/stacked.dart';
 import 'package:stacked_services/stacked_services.dart';
+import 'package:http/http.dart' as http;
 
 class HomeViewModel extends BaseViewModel {
   String _title = "Model";
@@ -34,7 +37,22 @@ class HomeViewModel extends BaseViewModel {
     // _navigationService.openDrawer();
   }
 
-  getMarkers() {
+  getMarkers() async {
+    // final response =
+    //     await http.get(Uri.parse('https://chaalak.herokuapp.com/user/all'));
+
+    // print("response==============");
+    // if (response.statusCode == 200) {
+    //   var tagsJson = jsonDecode(response.body);
+    //   List? tags = tagsJson != null ? List.from(tagsJson) : null;
+
+    //   print(tags);
+    // } else {
+    //   // If the server did not return a 200 OK response,
+    //   // then throw an exception.
+    //   print("Error");
+    // }
+
     markers.add(Marker(
       //add first marker
       markerId: MarkerId(showLocation.toString()),
@@ -122,5 +140,27 @@ class HomeViewModel extends BaseViewModel {
 
   markerTap() {
     showBookingTabs();
+  }
+}
+
+class Album {
+  String? firstName;
+  String? lastName;
+  String? userId;
+
+  Album({this.firstName, this.lastName, this.userId});
+
+  Album.fromJson(Map<String, dynamic> json) {
+    firstName = json['firstName'];
+    lastName = json['lastName'];
+    userId = json['userId'];
+  }
+
+  Map<String, dynamic> toJson() {
+    final Map<String, dynamic> data = new Map<String, dynamic>();
+    data['firstName'] = this.firstName;
+    data['lastName'] = this.lastName;
+    data['userId'] = this.userId;
+    return data;
   }
 }
