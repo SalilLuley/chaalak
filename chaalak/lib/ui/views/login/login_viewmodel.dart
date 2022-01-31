@@ -27,7 +27,7 @@ class LoginViewModel extends BaseViewModel {
   navigateToDetail() async {
     var signIn = await _socialMediaLogin.signInWithGoogle();
     print(signIn);
-    // _navigationService.navigateTo(Routes.homeView);
+    _navigationService.navigateTo(Routes.homeView);
   }
 
   Future _replaceWith() async {
