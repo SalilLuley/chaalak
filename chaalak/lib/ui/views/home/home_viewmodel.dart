@@ -1,14 +1,18 @@
-import 'dart:convert';
-
+import 'package:built_collection/built_collection.dart';
 import 'package:chaalak/app/router/router.locator.dart';
+import 'package:chaalak/model/stations/find.dart';
+import 'package:chaalak/service/home/station.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:stacked/stacked.dart';
 import 'package:stacked_services/stacked_services.dart';
-import 'package:http/http.dart' as http;
+import 'package:chopper/chopper.dart' as chopper;
 
 class HomeViewModel extends BaseViewModel {
   String _title = "Model";
   final navigationService = locator<NavigationService>();
+
+  StationService _stationService = StationService.create();
+
   late GoogleMapController myController;
   final Set<Marker> markers = new Set(); //markers for google map
   static const LatLng showLocation =
@@ -37,22 +41,12 @@ class HomeViewModel extends BaseViewModel {
     // _navigationService.openDrawer();
   }
 
-  getMarkers() async {
-    // final response =
-    //     await http.get(Uri.parse('https://chaalak.herokuapp.com/user/all'));
+  Future<chopper.Response<BuiltList<StationDtoResponse>>> find() async {
+    var responseCategories = await _stationService.find();
+    return responseCategories;
+  }
 
-    // print("response==============");
-    // if (response.statusCode == 200) {
-    //   var tagsJson = jsonDecode(response.body);
-    //   List? tags = tagsJson != null ? List.from(tagsJson) : null;
-
-    //   print(tags);
-    // } else {
-    //   // If the server did not return a 200 OK response,
-    //   // then throw an exception.
-    //   print("Error");
-    // }
-
+  getMarkers() {
     markers.add(Marker(
       //add first marker
       markerId: MarkerId(showLocation.toString()),
@@ -140,6 +134,11 @@ class HomeViewModel extends BaseViewModel {
 
   markerTap() {
     showBookingTabs();
+  }
+
+  loadData() async {
+    var result = await this._stationService.find();
+    print(result.body);
   }
 }
 

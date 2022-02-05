@@ -20,6 +20,6 @@ class SplashViewModel extends BaseViewModel {
   }
 
   Future indicateAnimationComplete() async {
-    await _replaceWith();
+    await navigateToDetail();
   }
 }

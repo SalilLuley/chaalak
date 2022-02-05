@@ -15,6 +15,7 @@ class HomeView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ViewModelBuilder<HomeViewModel>.reactive(
+      onModelReady: (model) => model.loadData(),
       builder: (context, model, child) => Scaffold(
         key: _scaffoldKey,
         resizeToAvoidBottomInset: false,

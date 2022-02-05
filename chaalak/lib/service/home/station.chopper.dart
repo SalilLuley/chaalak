@@ -17,9 +17,10 @@ class _$StationService extends StationService {
   final definitionType = StationService;
 
   @override
-  Future<Response<StationDtoResponse>> categoryList() {
-    final $url = '/api/user/shop/category/list';
+  Future<Response<BuiltList<StationDtoResponse>>> find() {
+    final $url = '/station/all';
     final $request = Request('GET', $url, client.baseUrl);
-    return client.send<StationDtoResponse, StationDtoResponse>($request);
+    return client
+        .send<BuiltList<StationDtoResponse>, StationDtoResponse>($request);
   }
 }
