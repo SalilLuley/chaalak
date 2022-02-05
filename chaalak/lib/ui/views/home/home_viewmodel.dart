@@ -14,7 +14,10 @@ class HomeViewModel extends BaseViewModel {
   StationService _stationService = StationService.create();
 
   late GoogleMapController myController;
-  final Set<Marker> markers = new Set(); //markers for google map
+  final Set<Marker> _markers = new Set(); //markers for google map
+
+  Set<Marker> get markers => _markers; //markers for google map
+
   static const LatLng showLocation =
       const LatLng(27.7089427, 85.3086209); //location to show in map
 
@@ -44,49 +47,6 @@ class HomeViewModel extends BaseViewModel {
   Future<chopper.Response<BuiltList<StationDtoResponse>>> find() async {
     var responseCategories = await _stationService.find();
     return responseCategories;
-  }
-
-  getMarkers() {
-    markers.add(Marker(
-      //add first marker
-      markerId: MarkerId(showLocation.toString()),
-      position: showLocation, //position of marker
-      infoWindow: InfoWindow(
-        //popup info
-        title: 'Marker Title First ',
-        snippet: 'My Custom Subtitle',
-      ),
-      icon: BitmapDescriptor.defaultMarker, //Icon for Marker
-    ));
-
-    markers.add(Marker(
-        //add second marker
-        markerId: MarkerId(showLocation.toString()),
-        position: LatLng(21.1341, 79.0816), //position of marker
-        infoWindow: InfoWindow(
-          //popup info
-          title: 'Marker Title Second ',
-          snippet: 'My Custom Subtitle',
-        ),
-        icon: BitmapDescriptor.defaultMarker, //Icon for Marker
-        onTap: () => {this.markerTap()}));
-
-    markers.add(Marker(
-        //add third marker
-        markerId: MarkerId(showLocation.toString()),
-        position: LatLng(21.1327, 79.0960), //position of marker
-        infoWindow: InfoWindow(
-          //popup info
-          title: 'Marker Title Third ',
-          snippet: 'My Custom Subtitle',
-        ),
-        icon: BitmapDescriptor.defaultMarker,
-        onTap: () => {this.markerTap()} //Icon for Marker
-        ));
-
-    //add more markers here
-
-    return markers;
   }
 
   showBookingTabs() {
@@ -137,8 +97,23 @@ class HomeViewModel extends BaseViewModel {
   }
 
   loadData() async {
-    var result = await this._stationService.find();
-    print(result.body);
+    chopper.Response<BuiltList<StationDtoResponse>> result =
+        await runBusyFuture(this._stationService.find());
+    result.body!.forEach((p0) {
+      _markers.add(Marker(
+        //add first marker
+        markerId: MarkerId(showLocation.toString()),
+        position: LatLng(
+            p0.location.latitude, p0.location.longitude), //position of marker
+        infoWindow: InfoWindow(
+          //popup info
+          title: '${p0.name}',
+          snippet: '${p0.description}',
+        ),
+        icon: BitmapDescriptor.defaultMarker, //Icon for Marker
+      ));
+    });
+    notifyListeners();
   }
 }
 

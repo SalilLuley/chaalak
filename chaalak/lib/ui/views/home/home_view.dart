@@ -67,7 +67,7 @@ class HomeView extends StatelessWidget {
                     alignment: AlignmentDirectional(0, 0),
                     child: GoogleMap(
                       zoomGesturesEnabled: true,
-                      markers: model.getMarkers(),
+                      markers: model.markers,
                       onTap: (lat) => {model.mapTap()},
                       mapType: MapType.normal,
                       initialCameraPosition: model.initialCamera(),
