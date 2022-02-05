@@ -45,7 +45,7 @@ class StackedRouter extends RouterBase {
   Map<Type, StackedRouteFactory> get pagesMap => _pagesMap;
   final _pagesMap = <Type, StackedRouteFactory>{
     SplashView: (data) {
-      return PageRouteBuilder<CustomRoute<dynamic>>(
+      return PageRouteBuilder<dynamic>(
         pageBuilder: (context, animation, secondaryAnimation) =>
             const SplashView(),
         settings: data,
@@ -57,25 +57,25 @@ class StackedRouter extends RouterBase {
       var args = data.getArgs<HomeViewArguments>(
         orElse: () => HomeViewArguments(),
       );
-      return MaterialPageRoute<MaterialRoute<dynamic>>(
+      return MaterialPageRoute<dynamic>(
         builder: (context) => HomeView(key: args.key),
         settings: data,
       );
     },
     BookingHistoryView: (data) {
-      return MaterialPageRoute<MaterialRoute<dynamic>>(
+      return MaterialPageRoute<dynamic>(
         builder: (context) => const BookingHistoryView(),
         settings: data,
       );
     },
     BookingHistoryDetailView: (data) {
-      return MaterialPageRoute<MaterialRoute<dynamic>>(
+      return MaterialPageRoute<dynamic>(
         builder: (context) => const BookingHistoryDetailView(),
         settings: data,
       );
     },
     LoginView: (data) {
-      return MaterialPageRoute<MaterialRoute<dynamic>>(
+      return MaterialPageRoute<dynamic>(
         builder: (context) => const LoginView(),
         settings: data,
       );

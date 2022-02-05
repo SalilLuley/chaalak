@@ -41,6 +41,9 @@ dependencies:
   firebase_core: ^1.11.0
   firebase_auth: ^3.3.5
   http: ^0.13.4
+  chopper: ^4.0.5
+  built_value: ^8.1.4
+  built_collection: ^5.1.1
 
 dev_dependencies:
   flutter_test:
@@ -49,6 +52,8 @@ dev_dependencies:
   stacked_generator:
   auto_size_text:
   cached_network_image: ^3.1.0
+  chopper_generator: ^4.0.5
+  built_value_generator: ^8.1.4
 
   flutter_svg: ^0.22.0
   font_awesome_flutter:
