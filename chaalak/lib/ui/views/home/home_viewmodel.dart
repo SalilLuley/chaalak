@@ -99,16 +99,16 @@ class HomeViewModel extends BaseViewModel {
   loadData() async {
     chopper.Response<BuiltList<StationDtoResponse>> result =
         await runBusyFuture(this._stationService.find());
-    result.body!.forEach((p0) {
+    result.body!.forEach((item) {
       _markers.add(Marker(
         //add first marker
         markerId: MarkerId(showLocation.toString()),
-        position: LatLng(
-            p0.location.latitude, p0.location.longitude), //position of marker
+        position: LatLng(item.location.latitude,
+            item.location.longitude), //position of marker
         infoWindow: InfoWindow(
           //popup info
-          title: '${p0.name}',
-          snippet: '${p0.description}',
+          title: '${item.name}',
+          snippet: '${item.description}',
         ),
         icon: BitmapDescriptor.defaultMarker, //Icon for Marker
       ));
